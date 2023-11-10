@@ -9,6 +9,7 @@ import (
 var tpl *template.Template
 
 func init() {
+	// templates include a header, footer and main value
 	tpl = template.Must(template.ParseGlob("templates/*"))
 }
 

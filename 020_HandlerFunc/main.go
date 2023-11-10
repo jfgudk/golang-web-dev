@@ -15,6 +15,8 @@ func c(res http.ResponseWriter, req *http.Request) {
 
 func main() {
 
+	// http.HandlerFunc converts a func with with Handler signature
+	// to a Handler
 	http.Handle("/dog", http.HandlerFunc(d))
 	http.Handle("/cat", http.HandlerFunc(c))
 

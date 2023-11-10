@@ -17,5 +17,6 @@ func dog(w http.ResponseWriter, req *http.Request) {
 }
 
 func dogPic(w http.ResponseWriter, req *http.Request) {
+	// simplest form of call ... uses default values ...
 	http.ServeFile(w, req, "toby.jpg")
 }

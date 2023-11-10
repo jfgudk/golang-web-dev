@@ -15,12 +15,13 @@ func main() {
 func dog(w http.ResponseWriter, req *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-
+	// embed the image URI in the page
 	io.WriteString(w, `
 	<img src="/toby.jpg">
 	`)
 }
 
+// serve the image URLI - meets HandlerFunc type
 func dogPic(w http.ResponseWriter, req *http.Request) {
 	f, err := os.Open("toby.jpg")
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 
 func main() {
 	http.HandleFunc("/", foo)
+	// NotFoundHadler returns 404 page not found - should do this to disable favicon functionality
 	http.Handle("/favicon.ico", http.NotFoundHandler())
 	http.ListenAndServe(":8080", nil)
 }

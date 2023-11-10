@@ -27,6 +27,8 @@ func foo(w http.ResponseWriter, req *http.Request) {
 func bar(w http.ResponseWriter, req *http.Request) {
 	fmt.Println("Your request method at bar:", req.Method)
 	// process form submission here
+	// this redirects you to the root
+	// this is a 307 temporary redirect
 	http.Redirect(w, req, "/", http.StatusTemporaryRedirect)
 }
 

@@ -60,6 +60,7 @@ func foo(w http.ResponseWriter, req *http.Request) {
 		}
 	}
 
+	// same form as prior example - moved into a template
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	tpl.ExecuteTemplate(w, "index.gohtml", s)
 }

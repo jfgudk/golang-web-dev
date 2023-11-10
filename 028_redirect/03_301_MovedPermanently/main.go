@@ -18,5 +18,8 @@ func foo(w http.ResponseWriter, req *http.Request) {
 
 func bar(w http.ResponseWriter, req *http.Request) {
 	fmt.Println("Your request method at bar:", req.Method)
+	// this redirects you to the root
+	// this is a 301 permanent redirect
+	// browsers will remember this
 	http.Redirect(w, req, "/", http.StatusMovedPermanently)
 }

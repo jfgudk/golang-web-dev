@@ -18,6 +18,12 @@ type person struct {
 	Subscribed bool
 }
 
+// code in example 01, 02 and 03 is identical
+// templates are identical except this is using
+// <form method="POST" enctype="text/plain">
+// enctype="text/plain" is generally for debugging and should not be used in production
+// input results in output in form:
+// first=Jer last=Gud
 func main() {
 	http.HandleFunc("/", foo)
 	http.Handle("/favicon.ico", http.NotFoundHandler())

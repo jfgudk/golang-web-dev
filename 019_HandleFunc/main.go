@@ -14,7 +14,9 @@ func c(res http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-
+	// HandleFunc doesn't use Handler interface
+	// just a function that accepts the same params
+	// attaches to default serve mux
 	http.HandleFunc("/dog", d)
 	http.HandleFunc("/cat", c)
 

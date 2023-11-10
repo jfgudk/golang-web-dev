@@ -18,6 +18,12 @@ type person struct {
 	Subscribed bool
 }
 
+// code in example 01, 02 and 03 is identical
+// templates are identical except this is using
+// <form method="POST" enctype="multipart/form-data">
+// enctype="multipart/form-data" is need for file uploading
+// input results in output in form:
+// ------WebKitFormBoundaryS8CEzoFKvJrESetc Content-Disposition: form-data; name="first" Jer ------WebKitFormBoundaryS8CEzoFKvJrESetc Content-Disposition: form-data; name="last" Gud ------WebKitFormBoundaryS8CEzoFKvJrESetc--
 func main() {
 	http.HandleFunc("/", foo)
 	http.Handle("/favicon.ico", http.NotFoundHandler())

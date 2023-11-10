@@ -6,7 +6,9 @@ import (
 )
 
 func main() {
+	// this carves out URI / to this particular handler - which always returns toby.jpg
 	http.HandleFunc("/", dog)
+	// this carves out and causes anything in the /assets URI to be served from /assets folder, includes the directory listing
 	http.Handle("/assets/", http.StripPrefix("/assets", http.FileServer(http.Dir("./assets"))))
 	http.ListenAndServe(":8080", nil)
 }

@@ -17,6 +17,7 @@ func foo(w http.ResponseWriter, req *http.Request) {
 
 	var s string
 	fmt.Println(req.Method)
+	// responds to POST generated below
 	if req.Method == http.MethodPost {
 
 		// open
@@ -40,6 +41,8 @@ func foo(w http.ResponseWriter, req *http.Request) {
 	}
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	// input type="file" allows you to upload a file into val q
+	// creates a button to select the file
 	io.WriteString(w, `
 	<form method="POST" enctype="multipart/form-data">
 	<input type="file" name="q">

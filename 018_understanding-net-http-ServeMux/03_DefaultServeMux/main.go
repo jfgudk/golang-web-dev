@@ -21,8 +21,10 @@ func main() {
 	var d hotdog
 	var c hotcat
 
+	// this is a handle to the DefaultServeMux
 	http.Handle("/dog", d)
 	http.Handle("/cat", c)
 
+	// nil tells serve to use DefaultServerMux
 	http.ListenAndServe(":8080", nil)
 }

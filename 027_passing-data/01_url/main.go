@@ -12,6 +12,8 @@ func main() {
 }
 
 func foo(w http.ResponseWriter, req *http.Request) {
+	// this reads the URI query paramater `q`
+	// POST form values take precendence over query param values
 	v := req.FormValue("q")
 	fmt.Fprintln(w, "Do my search: "+v)
 }

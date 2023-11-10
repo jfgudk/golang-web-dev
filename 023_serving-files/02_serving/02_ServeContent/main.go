@@ -27,9 +27,11 @@ func dogPic(w http.ResponseWriter, req *http.Request) {
 
 	fi, err := f.Stat()
 	if err != nil {
+		// returns HTTP error to user connection, leaves connection open
 		http.Error(w, "file not found", 404)
 		return
 	}
 
+	// low level manipulation of values used e.g. in caching ...
 	http.ServeContent(w, req, f.Name(), fi.ModTime(), f)
 }
